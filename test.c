@@ -1,35 +1,47 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-//两个函数相加
-//	sum = Add(num1, num2);
-//	sum = Add(a, b);
-//	printf("sum=%d\n", sum);
-//	re#include<stdio.h>
-//int Add(int x, int y)
-//{
-//	int z = x + y;
-//	return z;
-//}
+//2020年品茗经典C++笔试题
+//（交换两个整形变量）
+
+//#include<stdio.h>
 //int main()
 //{
-//	int num1 = 10;
-//	int num2 = 20;
-//	int sum = 0;
-//	int a = 100;
-//	int b = 200;
-//turn 0;
+//	int a = 3;
+//	int b = 5;
+//	int c = 0;//相当于空瓶
+//	printf("交换前：a=%d b=%d\n", a, b);
+//	c = a;//1
+//	a = b;//2
+//	b = c;//3
+//	printf("交换后：a=%d b=%d\n", a, b);
+//	return 0;
 //}
 
-//这边是分界线
-//如果打印一组数组0--10
+////如果不能有第三个变量
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 3;
+//	int b = 5;
+//	printf("交换前：a=%d b=%d\n", a, b);
+//	a = a + b;
+//	b = a - b;
+//	a = a - b;
+//	printf("交换后：a=%d b=%d\n", a, b);
+//	return 0;
+//}//这种方法只能解决数字较小的问题，不能解决数字较大的问题。
+////存在整形溢出的问题。int--4个字节--32bit位--整形有最大值
+
+//下面改进
 #include<stdio.h>
 int main()
 {
-	int arr[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-	int i = 0;
-	while (i < 10)
-	{
-		printf("%d\n", arr[i]);
-		i++;
-	}
+	int a = 3;
+	int b = 5;
+	printf("交换前：a=%d b=%d\n", a, b);
+	a = a^b;
+	b = a^b;
+	a = a^b;
+	printf("交换后：a=%d b=%d\n", a, b);
 	return 0;
-}
+}//不会溢出的！，没有使用第三个变量！
+//结束
