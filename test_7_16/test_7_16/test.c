@@ -74,7 +74,21 @@
 //	return 0;
 //}
 
-后面可以加
-default:
-	printf("输入错误\n");
-	break;
+//后面可以加
+//default:
+//	printf("输入错误\n");
+//	break;
+
+//计算数组的元素个数
+int main()
+{
+	int arr[20] = { 1, 2, 3, 4, 5 };
+	int i = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	while (i < sz)
+	{
+		printf("%d", arr[i]);
+		i++;
+	}
+	return 0;
+}
